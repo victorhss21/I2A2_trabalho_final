@@ -662,6 +662,12 @@ tour-extraction-system/
 
 ---
 
+### Licença
+
+Este projeto está licenciado sob os termos da licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais informações.
+
+---
+
 **Desenvolvido pelo Grupo 287 - I2A2 Agentes Inteligentes**
 
 Data de Conclusão: 30 de Outubro de 2025
