@@ -560,7 +560,6 @@ tour-extraction-system/
 │   └── settings.yaml           # Configurações do sistema
 ├── app.py                      # Interface Streamlit
 ├── main.py                     # CLI (Ponto de entrada)
-├── .venv                       # Ambiente Virtual
 ```
 
 ### Como Usar o Repositório
