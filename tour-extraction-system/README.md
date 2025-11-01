@@ -399,7 +399,7 @@ extraction:
 
 ## 📈 Fluxograma do Sistema
 
-![FluxoGrama](figure.svg)
+![FluxoGrama](README_figs\figure.svg)
 
 > **Descrição:**
 > O fluxo inicia com a entrada de um catálogo turístico em PDF por meio da interface Streamlit, passando por um pipeline de processamento que realiza o chunking do PDF, indexação semântica com FAISS, extração de informações de tours via agentes CrewAI em múltiplos idiomas, e estruturação dos dados em JSON. Os resultados são exportados e refinados em duas etapas, gerando tanto um Excel bruto quanto um refinado, e apresentados em uma interface web para visualização e download pelo usuário, com suporte a debug interno para testes e validações.
@@ -408,7 +408,7 @@ extraction:
 
 ## 📱 Fluxo de Uso - Perspectiva do Usuário
 
-![FluxoGrama](figure_2.svg)
+![FluxoGrama](README_figs\figure_2.svg)
 
 > **Descrição:**
 > O fluxo começa com a entrada do PDF do catálogo turístico, que é processado por um pipeline central (incluindo Streamlit), passando por etapas integradas de chunking e indexação semântica, seguidas por extração automatizada de tours via agentes CrewAI, resultando em dados refinados e estruturados. Esses dados são exportados e otimizados em Excel bruto e refinado, disponibilizados em uma interface web para visualização e download pelo usuário, com suporte adicional a testes e validação interna por debug dedicado.
@@ -564,21 +564,82 @@ tour-extraction-system/
 
 ### Como Usar o Repositório
 
-```bash
-# 1. Clone o repositório
-git clone https://github.com/I2A2_Agentes_Inteligentes/tour-extraction-system.git
-cd tour-extraction-system
+**1. Garante instalação do Python em seu sistema (caso contrário, instale)**
+- Antes de tudo, tenha o Python instalado. Recomenda-se a versão 3.12 ou superior.
+- Para instalar: acesse https://www.python.org/downloads/ e baixe a versão para seu sistema (Windows, Mac ou Linux).
+- No Windows, durante a instalação, marque a opção “Add Python to PATH”.
 
-# 2. Instale dependências
-pip install -r requirements.txt
+***
 
-# 3. Configure ambiente
-cp .env.example .env
-# Edite .env com sua OPENAI_API_KEY
+**2. Instale o uv para gerenciamento de pacotes**
+- UV é um gerenciador moderno e facilita bastante a instalação dos pacotes.
+- Para instalar no Windows:
+    - Abra o PowerShell como administrador e rode:
+      ```bash
+      powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+      ```
+- No Linux/macOS:
+    - Abra o Terminal e digite:
+      ```bash
+      curl -LsSf https://astral.sh/uv/install.sh | sh
+      ```
+- Após instalar, digite no terminal:
+    ```bash
+    uv --version
+    ```
+  Se aparecer um número da versão, está tudo certo.
 
-# 4. Execute
-streamlit run app.py
-```
+***
+
+**3. Clone o repositório do GitHub**
+- Vá para a pasta onde deseja salvar o projeto.
+- No terminal, digite:
+  ```bash
+  git clone https://github.com/victorhss21/i2a2_trabalho_final.git
+  ```
+- Entre na pasta do projeto:
+  ```bash
+  cd i2a2_trabalho_final/tour-extraction-system
+  ```
+
+***
+
+**4. Crie e ative um ambiente virtual com o uv**
+- Ambiente virtual deixa tudo organizado e evita conflito de versões.
+- Para criar e ativar, execute:
+  ```bash
+  uv venv .venv
+  uv venv --activate
+  ```
+- Pronto! Você está usando um ambiente virtual isolado.
+
+***
+
+**5. Instale os pacotes necessários**
+- Instale todas as dependências do projeto (listadas em requirements.txt ou pyproject.toml):
+  ```bash
+  uv pip install -r requirements.txt
+  ```
+  Ou, se houver um arquivo pyproject.toml:
+  ```bash
+  uv pip install .
+  ```
+
+***
+
+**6. Execute o sistema**
+- Conforme o arquivo README.md contido no diretório do projeto, basta rodar:
+   ```bash
+   streamlit run app.py
+   ```
+***
+
+**7. Dicas gerais**
+- Caso alguma etapa dê erro, confira se está no ambiente virtual (veja se aparece .venv na linha do terminal).
+- Consulte o README do projeto para instruções específicas sobre entrada e saída de dados.
+- O sistema pede um PDF de catálogo turístico como entrada, que pode ser uploaded na interface Streamlit (caso não tenha, no diretório de `input` são disponibilizados dois exemplos que podem ser utilizados).
+
+***
 
 ---
 
