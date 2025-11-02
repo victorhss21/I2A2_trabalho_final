@@ -608,8 +608,14 @@ tour-extraction-system/
 - Ambiente virtual deixa tudo organizado e evita conflito de versões.
 - Para criar e ativar, execute:
   ```bash
+  # Criando ambiente virtual
   uv venv .venv
-  uv venv --activate
+
+  # Ativando (macOS e Linux)
+  source .venv/Scripts/activate
+
+  # Ativando (Windows)
+  .venv\Scripts\activate
   ```
 - Pronto! Você está usando um ambiente virtual isolado.
 
@@ -627,14 +633,19 @@ tour-extraction-system/
 
 ***
 
-**6. Execute o sistema**
+**6. Crie o arquivo .env**
+- Utilizando o arquivo `.env.example` como exemplo, crie um arquivo `.env` seguindo a mesma estrutura e adicione suas chaves de API necessárias:
+
+***
+
+**7. Execute o sistema**
 - Conforme o arquivo README.md contido no diretório do projeto, basta rodar:
    ```bash
    streamlit run app.py
    ```
 ***
 
-**7. Dicas gerais**
+**8. Dicas gerais**
 - Caso alguma etapa dê erro, confira se está no ambiente virtual (veja se aparece .venv na linha do terminal).
 - Consulte o README do projeto para instruções específicas sobre entrada e saída de dados.
 - O sistema pede um PDF de catálogo turístico como entrada, que pode ser uploaded na interface Streamlit (caso não tenha, no diretório de `input` são disponibilizados dois exemplos que podem ser utilizados).
